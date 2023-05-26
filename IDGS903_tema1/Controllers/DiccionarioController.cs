@@ -30,13 +30,6 @@ namespace IDGS903_tema1.Controllers
 
             return View();
         }
-        [HttpPost]
-        public ActionResult LeerDiccionario(Diccionario dic)
-        {
-            var op = new DiccionarioService();
-            op.GuardarTraduccion(dic);
-            return View();
-        }
 
         public ActionResult Traductor()
         { 

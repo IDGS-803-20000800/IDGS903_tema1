@@ -1,3 +1,4 @@
 hair:cabello
 hello:hola
 red:rojo
+ball:pelota

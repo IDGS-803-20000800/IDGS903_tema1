@@ -4,7 +4,7 @@
     ViewBag.Title = "AgregarPalabra";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("AgregarPalabra", "Diccionario", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
