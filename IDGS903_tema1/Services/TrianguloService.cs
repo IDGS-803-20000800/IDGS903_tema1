@@ -7,7 +7,7 @@ namespace IDGS903_tema1.Services
 {
     public class TrianguloService
     {
-        public double CalcularLado(int x1, int y1, int x2, int y2)
+        public double CalcularLado(double x1, double y1, double x2, double y2)
         {
             double lado = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
             return lado;
@@ -20,11 +20,11 @@ namespace IDGS903_tema1.Services
             {
                 case "La figura es un triángulo equílatero": area = Math.Pow(lado1, 2) * Math.Sqrt(3) / 4; break;
                 case "La figura es un triángulo isosceles": if (lado1 == lado2) {
-                        area = (lado3 * Math.Sqrt(Math.Pow(lado1, 2) - Math.Pow(lado3, 2) / 4))/2;
+                        area = lado3 * Math.Sqrt(Math.Pow(lado1, 2) - Math.Pow(lado3, 2) / 4)/2;
                         break;
                     } else
                     {
-                        area = (lado2 * Math.Sqrt(Math.Pow(lado1, 2) - Math.Pow(lado2, 2) / 4)) / 2;
+                        area = lado2 * Math.Sqrt(Math.Pow(lado1, 2) - Math.Pow(lado2, 2) / 4) / 2;
                         break;
                     }
                 case "La figura es un triángulo escaleno":
