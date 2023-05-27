@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 
 namespace IDGS903_tema1.Services
@@ -11,6 +12,12 @@ namespace IDGS903_tema1.Services
         {
             double lado = Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
             return lado;
+        }
+
+        public double CalcularPendiente(double x1, double y1, double x2, double y2)
+        {
+            double pendiente = (y2 - y1) / (x2 - x1);
+            return pendiente;
         }
 
         public double CalcularArea(double lado1, double lado2, double lado3, string tipoTriangulo)
@@ -34,13 +41,13 @@ namespace IDGS903_tema1.Services
             return area;
         }
 
-        public string DeterminarTriangulo(double[] lados)
+        public string DeterminarTriangulo(double[] lados, double pendiente1, double pendiente2)
         {
-            string tipo = "";
+            string tipo;
             double lado1 = lados[0];
             double lado2 = lados[1];
             double lado3 = lados[2];
-            if (lado1 >= lado2 + lado3 || lado2 >= lado1 + lado3 || lado3 >= lado1 + lado2)
+            if (lado1 >= lado2 + lado3 || lado2 >= lado1 + lado3 || lado3 >= lado1 + lado2 && pendiente1 == pendiente2)
             {
                 tipo = "La figura no es un triángulo";
             }
